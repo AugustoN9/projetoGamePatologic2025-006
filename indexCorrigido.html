@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrossel com Bolinhas Inferiores</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -scroll-padding-top: 80px; /* altura da navbar */
+}
+
+html {
+  scroll-padding-top: 80px; /* mesma altura da navbar */
+}
+
+
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #222;
+      display: flex;
+      justify-content: center;
+      z-index: 999;
+      padding: 1rem 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+
+    .navbar a.active {
+      color: #00bfff;
+    }
+
+    section {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.paginacao-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+    .paginacao {
+      display: flex;
+      height: 100%;
+      flex: 1;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      background-color: #222;
+    }
+
+    .paginacao::-webkit-scrollbar {
+      display: none;
+    }
+
+    .item {
+  scroll-snap-align: start;
+  flex: 0 0 100%;
+  width: 100vw;
+  height: 100vh; /* <- isso garante altura total da tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+
+
+    .item:nth-child(odd) {
+      background-color: #007BFF;
+    }
+
+    .item:nth-child(even) {
+      background-color: #00b894;
+    }
+
+    .dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dot.active {
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="#sec1" class="nav-link">Seção 1</a>
+    <a href="#sec2" class="nav-link">Seção 2</a>
+    <a href="#sec3" class="nav-link">Seção 3</a>
+    <a href="#sec4" class="nav-link">Seção 4</a>
+  </nav>
+
+  <section id="sec1">
+    <div class="paginacao-wrapper">
+      <div class="paginacao" id="paginacao1">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+      </div>
+      <div class="dots" data-dots-for="paginacao1"></div>
+    </div>
+  </section>
+
+  <section id="sec2">
+    <div class="paginacao-wrapper">
+      <div class="paginacao" id="paginacao2">
+        <div class="item">Produto A</div>
+        <div class="item">Produto B</div>
+      </div>
+      <div class="dots" data-dots-for="paginacao2"></div>
+    </div>
+  </section>
+
+  <section id="sec3">
+    <div class="paginacao-wrapper">
+      <div class="paginacao" id="paginacao3">
+        <div class="item">Slide 1</div>
+        <div class="item">Slide 2</div>
+        <div class="item">Slide 3</div>
+        <div class="item">Slide 4</div>
+      </div>
+      <div class="dots" data-dots-for="paginacao3"></div>
+    </div>
+  </section>
+
+  <section id="sec4">
+    <div class="paginacao-wrapper">
+      <div class="paginacao" id="paginacao4">
+        <div class="item">COLORACAO A</div>
+        <div class="item">COLORACAO B</div>
+        <div class="item">COLORACAO C</div>
+      </div>
+      <div class="dots" data-dots-for="paginacao4"></div>
+    </div>
+  </section>
+
+  <script>
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section");
+
+    document.querySelector("#sec2").scrollIntoView({
+  behavior: "smooth",
+  block: "start"
+});
+
+
+    // Ativar link da navbar conforme rolagem
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    // Criar bolinhas para cada carrossel
+    document.querySelectorAll(".dots").forEach(dotsContainer => {
+      const targetId = dotsContainer.getAttribute("data-dots-for");
+      const paginacao = document.getElementById(targetId);
+      const items = paginacao.querySelectorAll(".item");
+
+      items.forEach((_, index) => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => {
+          paginacao.scrollTo({
+            left: index * window.innerWidth,
+            behavior: "smooth",
+          });
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      // Atualizar bolinha ativa conforme scroll
+      paginacao.addEventListener("scroll", () => {
+        const scrollLeft = paginacao.scrollLeft;
+        const currentIndex = Math.round(scrollLeft / window.innerWidth);
+        dotsContainer.querySelectorAll(".dot").forEach((dot, i) => {
+          dot.classList.toggle("active", i === currentIndex);
+        });
+      });
+    });
+
+    // Navegar com teclado (← e →)
+    window.addEventListener("keydown", (e) => {
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+
+      const visibleSection = Array.from(sections).find(section => {
+        const rect = section.getBoundingClientRect();
+        return rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+      });
+
+      if (!visibleSection) return;
+
+      const paginacao = visibleSection.querySelector(".paginacao");
+      if (!paginacao) return;
+
+      const direction = e.key === "ArrowRight" ? 1 : -1;
+      paginacao.scrollBy({
+        left: direction * window.innerWidth,
+        behavior: "smooth",
+      });
+    });
+  </script>
+
+</body>
+</html>

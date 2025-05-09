@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto PatoLogic</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/styleGamePatologic.css">
+  <link rel="stylesheet" href="styleQuemSomos.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html" class="nav-link">
+        <img src="./image/LogoPatologic2.png" alt="logo" />
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle">&#9776;</button>
+
+    <div class="nav" id="navMenu">
+      <a href="#sec1" class="nav-link">Home</a>
+      <a href="#sec10" class="nav-link">Nosso projeto</a>
+      <a href="#sec11" class="nav-link">Quem somos</a>
+    </div>
+  </nav>
+
+  <div id="progressContainer">
+    <div id="progressBar"></div>
+  </div>
+
+
+
+  <section id="sec1">
+    <div class="paginacao-wrapper">
+      <div class="paginacao" id="paginacao0">
+        <div class="item home">
+          <div class="textoEsq">
+            <h1>Introdução</h1>
+            <p>
+              Imagine uma mulher indo ao ginecologista para um exame de rotina,
+              um paciente com queixas de dor abdominal descobrindo uma gastrite,
+              alguém controlando a diabetes com exames periódicos ou uma simples
+              consulta ao clínico geral por um sintoma persistente. Situações comuns no dia a dia,
+              mas que podem esconder alterações celulares ou teciduais importantes. Em todos esses casos,
+              a coleta de material para exames anatomopatológicos ou citopatológicos pode ser decisiva para
+              o diagnóstico precoce e tratamento adequado. Por trás desses exames, está o laboratório de patologia,
+              onde profissionais analisam cuidadosamente tecidos e células. Vamos iniciar uma jornada de conhecimento
+              por dentro deste laboratório e conhecer seus processos.
+            </p>
+          </div>
+          <div class="figSec FundoHome"></div>
+        </div>
+        <div class="item home3">
+          <div class="textoEsq">
+            <h1>Patologia</h1>
+            <p>
+              A palavra "patologia" tem origem no grego, onde "pathos" significa sofrimento ou doença,
+              e "logia" significa estudo — ou seja, é o estudo das doenças.
+              Já o termo "doença" vem do latim "dolentia", que expressa a ideia de dor ou sofrimento.
+              A patologia como ciência avançou significativamente com o desenvolvimento de técnicas microscópicas
+              e corantes histológicos, permitindo a análise detalhada de tecidos doentes.
+              Um marco importante foi a introdução da coloração pela técnica de Hematoxilina e Eosina (HE)
+              no final do século XIX, que revolucionou o diagnóstico histopatológico. A hematoxilina,
+              derivada da planta Haematoxylum campechianum, começou a ser usada em combinação com a eosina por volta de
+              1875,
+              proporcionando um contraste eficaz entre núcleos celulares (tingidos de azul/roxo) e citoplasma (tingido
+              de rosa),
+              sendo até hoje a coloração padrão na maioria dos laboratórios de anatomia patológica.
+            </p>
+          </div>
+          <div class="figSec FundoHome3"></div>
+        </div>
+        <div class="item home2" id="mapa">
+          <div class="map-container">
+            <img src="./image/MapaLab.png" alt="Mapa Laboratório" class="background-image">
+
+            <a href="#sec2" class="circle circle-link" data-step="Registro" id="circle1"
+              style="top: 20%; left: 20%;">1</a>
+            <a href="#sec3" class="circle disabled circle-link" data-step="Macroscopia" id="circle2"
+              style="top: 20%; left: 40%;">2</a>
+            <a href="#sec4" class="circle disabled circle-link" data-step="Histoprocessamento" id="circle3"
+              style="top: 20%; left: 60%;">3</a>
+            <a href="#sec9" class="circle disabled circle-link" data-step="Jogo" id="circle8"
+              style="top: 50%; left: 27%;">8</a>
+            <a href="#sec5" class="circle disabled circle-link" data-step="Emblocamento" id="circle4"
+              style="top: 50%; left: 45%;">4</a>
+            <a href="#sec6" class="circle disabled circle-link" data-step="Microtomia" id="circle5"
+              style="top: 50%; left: 65%;">5</a>
+            <a href="#sec8" class="circle disabled circle-link" data-step="Microscopia" id="circle7"
+              style="top: 75%; left: 30%;">7</a>
+            <a href="#sec7" class="circle disabled circle-link" data-step="Coloração" id="circle6"
+              style="top: 75%; left: 60%;">6</a>
+          </div>
+        </div>
+      </div>
+      <div class="dots" data-dots-for="paginacao0"></div>
+    </div>
+  </section>
+
+  <section id="sec2">
+    <div class="paginacao-wrapper">
+      <div class="paginacao" id="paginacao1">
+        <div class="item reg1">
+          <div class="figSec FundoReg"></div>
+          <div class="textoDir">
+            <h1>Registro</h1>
+            <p>
+              A verificação e validação de exames no setor de recepção e
+              registro do Laboratorio de Anatomia Patológica representam uma
+              etapa crítica no processo diagnóstico. Essa fase inicial garante
+              a integridade, a rastreabilidade e a segurança das amostras
+              biológicas recebidas, além de assegurar que os dados do paciente
+              e do exame estejam completos e corretos. Uma triagem cuidadosa é
+              essencial para evitar erros que possam comprometer o resultado
+              final, atrasar o diagnóstico ou até mesmo inviabilizar a
+              análise. Dessa forma, protocolos bem definidos para conferência
+              de informações, identificação de não conformidades e tratamento
+              adequado de inconsistências são fundamentais para manter a
+              qualidade e a confiabilidade no fluxo de trabalho laboratorial.
+            </p>
+          </div>
+        </div>
+        <div class="item reg2">
+          <div class="texto">
+            <h2>Etapas da Verificação no Recebimento</h2>
+            <ol>
+              <li>
+                <strong>Conferência do Pedido Médico:</strong>
+                <p>
+                  Verificar se o pedido está legível, completo e assinado.
+                  Avaliar se há indicação clara do exame solicitado e
+                  justificativa clínica, quando necessário.
+                </p>
+              </li>
+              <li>
+                <strong>Identificação do Paciente:</strong>
+                <p>
+                  Confirmar nome completo, data de nascimento, número do
+                  prontuário, sexo e demais dados identificadores.
+                </p>
+              </li>
+              <li>
+                <strong>Identificação do Solicitante:</strong>
+                <p>
+                  Registrar nome, CRM, unidade ou setor de origem e forma de
+                  contato do profissional solicitante.
+                </p>
+              </li>
+              <li>
+                <strong>Verificação do Tipo de Material Biológico:</strong>
+                <p>
+                  Identificar o tipo de amostra (biópsia, peça cirúrgica,
+                  citologia etc.) e checar se está devidamente acondicionada e
+                  fixada.
+                </p>
+              </li>
+              <li>
+                <strong>Conferência Quantitativa:</strong>
+                <p>
+                  Contar e comparar o número de frascos enviados com o
+                  descrito no pedido.
+                </p>
+              </li>
+              <li>
+                <strong>Conferência Qualitativa:</strong>
+                <p>
+                  Observar integridade dos frascos, presença de identificação
+                  externa, quantidade suficiente de fixador e aspecto geral do
+                  material.
+                </p>
+              </li>
+              <li>
+                <strong>Registro de Não Conformidades:</strong>
+                <p>
+                  Documentar quaisquer falhas ou ausências de informações,
+                  acionando os protocolos de correção ou devolução, conforme a
+                  gravidade da situação.
+                </p>
+              </li>
+              <li>
+                <strong>Validação e Liberação para o Fluxo:</strong>
+                <p>
+                  Após verificação, validar os dados no sistema e encaminhar
+                  as amostras corretamente identificadas para o processamento
+                  técnico.
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="item reg3">
+          <div class="textoLado">
+            <h3>Registro e Cadastro no Sistema</h3>
+            <ol>
+              <ul>
+                <li>
+                  Inserir todas as informações no sistema de gestão
+                  laboratorial.
+                </li>
+                <li>Gerar código ou número único para o exame.</li>
+                <li>Emitir etiquetas para frascos e formulários.</li>
+                <li>
+                  Conferir novamente as informações antes de encaminhar ao
+                  próximo setor.
+                </li>
+              </ul>
+            </ol>
+            <h3>Comunicação e Rastreabilidade</h3>
+            <ol>
+              <ul>
+                <li>Todas as correções devem ser registradas.</li>
+                <li>
+                  Enviar cópia do formulário de não conformidade ao setor da
+                  Qualidade.
+                </li>
+                <li>
+                  Rastreabilidade dos materiais deve ser garantida desde a
+                  entrada até o descarte.
+                </li>
+              </ul>
+            </ol>
+            <h3>Registro e Cadastro no Sistema</h3>
+            <ol>
+              <ul>
+                <li>
+                  Inserir todas as informações no sistema de gestão
+                  laboratorial.
+                </li>
+                <li>Gerar código ou número único para o exame.</li>
+                <li>Emitir etiquetas para frascos e formulários.</li>
+                <li>
+                  Conferir novamente as informações antes de encaminhar ao
+                  próximo setor.
+                </li>
+              </ul>
+            </ol>
+          </div>
+          <div class="textoLado">
+
+            <h3>Comunicação e Rastreabilidade</h3>
+            <ol>
+              <ul>
+                <li>Todas as correções devem ser registradas.</li>
+                <li>
+                  Enviar cópia do formulário de não conformidade ao setor da
+                  Qualidade.
+                </li>
+                <li>
+                  Rastreabilidade dos materiais deve ser garantida desde a
+                  entrada até o descarte.
+                </li>
+              </ul>
+            </ol>
+            <h3>Boas Práticas na Recepção de Exames</h3>
+            <ol>
+              <ul>
+                <li>Utilizar EPI adequado.</li>
+                <li>
+                  Manusear frascos com cuidado para evitar acidentes com
+                  formol.
+                </li>
+                <li>Padronizar etiquetas e registros.</li>
+                <li>Ter checklists visíveis para conferência manual.</li>
+                <li>Realizar treinamento periódico da equipe da recepção.</li>
+              </ul>
+            </ol>
+          </div>
+        </div>
+        <div class="item reg4">
+          <div class="tituloCentro">
+            <h2>Protocolo de Não Conformidades</h2>
+            <p>Quando identificadas irregularidades, aplicar os seguintes procedimentos:</p>
+          </div>
+          <div class="textos">
+            <div class="textoLado">
+              <h3>Tipos de Não Conformidades</h3>
+              <ul>
+                <li>Material sem identificação ou identificação divergente.</li>
+                <li>Ausência de pedido médico ou com dados incompletos.</li>
+                <li>Frascos danificados, abertos ou com vazamento.</li>
+                <li>Quantidade de material incompatível com o descrito.</li>
+                <li>Material sem fixador ou com fixador inadequado.</li>
+                <li>Demora no envio (tempo prolongado sem conservação).</li>
+              </ul>
+            </div>
+            <div class="textoLado">
+              <h3>Conduta diante da Não Conformidade</h3>
+              <ul>
+                <li>Não registrar no sistema antes de resolver a pendência.</li>
+                <li>Isolar o material e sinalizar com etiqueta de “pendente”.</li>
+                <li>Comunicar imediatamente o setor solicitante.</li>
+                <li>Registrar a ocorrência em formulário de não conformidade.</li>
+                <li>Se possível, corrigir com dados adicionais via contato com o solicitante.</li>
+                <li>Caso a falha comprometa a viabilidade do exame, comunicar coordenação/supervisão técnica para tomada
+                  de decisão.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="item reg5">
+          <div class="vocesabia">
+            <h2>VOCÊ SABIA?</h2>
+            <p>A conferência dos dados do paciente e da amostra no momento do
+              registro é a primeira etapa pré-analítica essencial para garantir
+              a rastreabilidade e segurança no diagnóstico.
+            </p>
+            <button class="btnVoltar"><a href="#mapa">Mapa</a></button>
+
+          </div>
+        </div>
+        <div class="dots" data-dots-for="paginacao1"></div>
+      </div>
+  </section>
+
+  <section id="sec3">
+    <div class="paginacao-wrapper">
+      <div class="paginacao" id="paginacao2">
+        <div class="item macro1">
+          <div class="figFundoMacro">
+            <div class="textoEsq">
+              <h1>Macroscópia</h1>
+              <p>
+                O exame macroscópico é a primeira etapa da análise de amostras no setor de Anatomia Patológica.
+                Ele consiste na observação a olho nu do material biológico recebido,
+                como fragmentos de órgãos, biópsias ou peças cirúrgicas,
+                permitindo descrever características como tamanho, forma, cor,
+                consistência e presença de lesões visíveis.
+                Essa etapa é fundamental para orientar o processamento e a amostragem correta do material,
+                auxiliando o patologista na formulação do diagnóstico.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="item macro2">
+          <div class="tituloCentro">
+            <h2>Etapas do Processo de Macroscopia</h2>
+          </div>
+          <div class="textos">
+            <div class="textoLado">
+
+              <strong>
+                <h4>1. Recebimento do Material Biológico</h4>
+              </strong>
+              <ul>
+                <p>- Verificação dos dados do frasco e da requisição.</p>
+                <p>- Checagem da integridade do recipiente e da presença de fixador (ex: formol).</p>
+              </ul>
+
+              <strong>
+                <h4>2. Identificação e Triagem</h4>
+              </strong>
+              <ul>
+                <p>- Confirmação do tipo de material (biópsia, peça cirúrgica, citologia, etc.).</p>
+                <p>- Priorização conforme urgência, tipo de exame ou protocolo institucional.</p>
+              </ul>
+
+              <strong>
+                <h4>3. Descritivo Macroscópico</h4>
+              </strong>
+              <ul>
+                <p>- Observação a olho nu do material.</p>
+                <p>- Registro de características como: forma, cor, tamanho, peso, consistência, presença de lesões ou
+                  alterações.</p>
+              </ul>
+
+
+            </div>
+            <div class="textoLado">
+
+              <strong>
+                <h4>4. Amostragem e Seccionamento</h4>
+              </strong>
+
+              <p>- Seleção das áreas mais representativas.</p>
+              <p>- Corte da amostra em fragmentos adequados ao processamento histológico.</p>
+              <p>- Colocação dos fragmentos em cápsulas ou cassetes identificados.</p>
+
+
+              <strong>
+                <h4>5. Registro e Codificação</h4>
+              </strong>
+
+              <p>- Registro de cada amostra no sistema informatizado.</p>
+
+
+            </div>
+          </div>
+
+        </div>
+        <div class="item macro3">
+          <div class="vocesabia">
+            <h2>VOCÊ SABIA?</h2>
+            <p>O ideal é que o tempo entre a coleta da biópsia e sua imersão no
+              fixador não ultrapasse 30 minutos para preservar adequadamente os tecidos.
+            </p>
+            <button class="btnVoltar"><a href="#mapa">Mapa</a></button>
+
+          </div>
+        </div>
+      </div>
+      <div class="dots" data-dots-for="paginacao2"></div>
+    </div>
+  </section>
+
+  <section id="sec4">
+    <div class="paginacao-wrapper">
+      <div class="paginacao" id="paginacao3">
+        <div class="item histo1">
+          <div class="figSec FundoHisto"></div>
+          <div class="textoDir">
+            <h1>Histoprocessamento</h1>
+            <p>
+              O processamento histológico é uma etapa essencial na preparação de amostras de tecidos para análise
+              microscópica.
+              Nesse processo, o material fixado é submetido a banhos sucessivos de álcool (para desidratação),
+              xilol (para remoção de gordura e preparação para a parafina) e, por fim, imerso em parafina líquida.
+              Essa sequência torna o tecido firme e adequado para a próxima fase: o emblocamento,
+              onde será moldado em blocos de parafina para posterior corte e coloração.
+            </p>
+          </div>
+        </div>
+        <div class="item histo2">Histoprocessamento 2</div>
+        <div class="item">Histoprocessamento 3</div>
+        <div class="item">Histoprocessamento 4</div>
+        <div class="item histo3">
+          <div class="vocesabia">
+            <h2>VOCÊ SABIA?</h2>
+            <p class="textLongo">Durante o processamento histológico, o tecido passa por uma série de etapas fundamentais para sua
+              preservação e posterior inclusão em parafina.
+              A primeira delas é a <strong>desidratação</strong>, que consiste na remoção gradual da água presente nos
+              tecidos por meio de banhos em soluções de álcool com concentrações crescentes.
+              Em seguida, ocorre a <strong>diafanização</strong>, também chamada de <strong>clarificação</strong>, onde
+              o álcool é substituído por um solvente orgânico como o xilol, tornando o tecido translúcido e compatível
+              com a parafina.
+              Por fim, acontece a <strong>impregnação</strong>, na qual o tecido é completamente infiltrado por parafina
+              líquida, aquecida entre <strong>58 °C e 60 °C</strong>, oferecendo as condições ideais para a confecção de
+              material emblocado.
+            </p>
+            <button class="btnVoltar"><a href="#mapa">Mapa</a></button>
+
+          </div>
+        </div>
+      </div>
+      <div class="dots" data-dots-for="paginacao3"></div>
+    </div>
+  </section>
+
+  <section id="sec5">
+    <div class="paginacao-wrapper">
+      <div class="paginacao" id="paginacao4">
+        <div class="item emblocamento">
+          <div class="textoEsq">
+            <h1>Emblocamento</h1>
+            <p>
+              O emblocamento é uma etapa fundamental na histotecnologia,
+              onde os fragmentos de tecidos previamente processados são incluídos em blocos de parafina.
+              Esse procedimento garante a preservação da amostra e proporciona o suporte necessário para
+              que sejam realizados cortes finos com o micrótomo. A correta orientação do material durante
+              o emblocamento é essencial para a obtenção de lâminas de qualidade para o diagnóstico microscópico.
+            </p>
+          </div>
+          <div class="figSec FundoBloco"></div>
+        </div>
+        <div class="item">Emblocamento B</div>
+        <div class="item">
+          <div class="vocesabia">
+            <h2>VOCÊ SABIA?</h2>
+            <p>A orientação correta da amostra durante o emblocamento é fundamental
+              para garantir que o corte histológico mostre a área de interesse.
+            </p>
+            <button class="btnVoltar"><a href="#mapa">Mapa</a></button>
+
+          </div>
+        </div>
+      </div>
+      <div class="dots" data-dots-for="paginacao4"></div>
+    </div>
+  </section>
+
+  <section id="sec6">
+    <div class="paginacao-wrapper">
+      <div class="paginacao" id="paginacao5">
+        <div class="item microtomia">
+          <div class="figSec FundoCorte"></div>
+          <div class="textoDir">
+            <h1>Microtomia</h1>
+            <p>
+              A microtomia é a etapa em que os blocos de parafina, contendo o material biológico,
+              são cortados em fatias extremamente finas usando um equipamento chamado micrótomo.
+              Essas lâminas finas, geralmente com espessura entre 3 a 5 micrômetros, são cuidadosamente
+              colocadas em lâminas de vidro para análise microscópica. Essa técnica permite a
+              visualização detalhada das estruturas celulares e teciduais, sendo fundamental para
+              o diagnóstico preciso em anatomia patológica.
+            </p>
+          </div>
+        </div>
+        <div class="item">Microtomia B</div>
+        <div class="item">
+          <div class="vocesabia">
+            <h2>VOCÊ SABIA?</h2>
+            <p>Um micrômetro (µm) é a unidade de medida usada para
+              expressar a espessura dos cortes histológicos, geralmente entre 3 e 5 µm.<br />
+              O microtomo é o equipamento responsável por realizar cortes extremamente
+              finos das amostras incluídas em blocos de parafina.
+            </p>
+            <button class="btnVoltar"><a href="#mapa">Mapa</a></button>
+
+          </div>
+        </div>
+      </div>
+      <div class="dots" data-dots-for="paginacao5"></div>
+    </div>
+  </section>
+
+  <section id="sec7">
+    <div class="paginacao-wrapper">
+      <div class="paginacao" id="paginacao6">
+        <div class="item coloracao">
+          <div class="textoEsq">
+            <h1>Coloração</h1>
+            <p>
+              A coloração histoquímica é uma etapa essencial na preparação de lâminas para análise microscópica,
+              pois permite diferenciar estruturas celulares e teciduais através do uso de corantes específicos.
+              A técnica mais amplamente utilizada é a de Hematoxilina e Eosina (HE), na qual a hematoxilina
+              tinge os núcleos celulares de azul arroxeado, enquanto a eosina colore o citoplasma e componentes
+              extracelulares em tons de rosa. Essa combinação oferece excelente contraste e definição morfológica,
+              facilitando a identificação de alterações patológicas a luz do microscópio.
+            </p>
+          </div>
+          <div class="figSec FundoColor"></div>
+        </div>
+        <div class="item">Histoquimica B</div>
+        <div class="item">
+          <div class="vocesabia">
+            <h2>VOCÊ SABIA?</h2>
+            <p class="textLongo">A Hematoxilina, após ser oxidada em hemateína e ligada a um mordente (geralmente sais de alumínio),
+              atua como um corante básico que cora estruturas ácidas — especialmente os núcleos celulares —
+              em tons de azul ou roxo, devido à sua afinidade com componentes basofílicos, como o DNA e o RNA.
+              Já a Eosina é um corante ácido que se liga a estruturas básicas do citoplasma e proteínas,
+              corando-as em tons de rosa a vermelho, caracterizando a eosinofilia. Essa combinação contrastante
+              entre a basofilia nuclear e a eosinofilia citoplasmática permite uma visualização
+              nítida dos detalhes celulares na coloração de rotina Hematoxilina e Eosina (HE).
+            </p>
+            <button class="btnVoltar"><a href="#mapa">Mapa</a></button>
+
+          </div>
+        </div>
+      </div>
+      <div class="dots" data-dots-for="paginacao6"></div>
+    </div>
+  </section>
+
+  <section id="sec8">
+    <div class="paginacao-wrapper">
+      <div class="paginacao" id="paginacao7">
+        <div class="item microscopia">
+          <div class="figSec FundoMicro"></div>
+          <div class="textoDir">
+            <h1>Microscopia</h1>
+            <p>
+              A microscopia é a etapa final da rotina histotecnológica,
+              na qual as lâminas coradas são analisadas por um profissional habilitado,
+              geralmente um médico patologista. Utilizando o microscópio óptico,
+              é possível observar em detalhe as estruturas celulares e teciduais,
+              identificando alterações morfológicas que auxiliam no diagnóstico de doenças.
+              Essa análise minuciosa permite a correlação entre os achados microscópicos e
+              os dados clínicos do paciente, sendo fundamental para a tomada de decisões terapêuticas.
+            </p>
+          </div>
+        </div>
+        <div class="item">Microscopia B</div>
+        <div class="item">
+          <div class="vocesabia">
+            <h2>VOCÊ SABIA?</h2>
+            <p class="textLongo">O microscópio óptico utiliza luz visível e um sistema de lentes
+              para ampliar imagens de estruturas microscópicas. Com ele, é possível observar
+              células e tecidos com aumentos de até 1000 vezes! A lente objetiva e a lente ocular
+              trabalham em conjunto para formar uma imagem ampliada, sendo a objetiva responsável pela
+              primeira ampliação e a ocular pela ampliação final que chega aos nossos olhos.
+            </p>
+            <button class="btnVoltar"><a href="#mapa">Mapa</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="dots" data-dots-for="paginacao7"></div>
+    </div>
+  </section>
+
+  <section id="sec9">
+    <div class="paginacao-wrapper">
+      <div class="paginacao" id="paginacao">
+        <div class="item Jogo">
+          <div class="gameContainer">
+            <div class="info-panel">
+              <div class="dado" id="dado"></div>
+              <div class="casas" id="diceResult"></div>
+              <div class="pontos" id="pontuacao">PONTOS: 100</div>
+              <div class="atual" id="currentPositionDisplay">ATUAL: 0</div>
+              <div class="tempo" id="timer">TEMPO: 0s</div>
+            </div>
+            <div class="container">
+
+              <!-- Tabuleiro  -->
+              <div class="tabuleiro">
+                <!-- Div onde a patinho começa -->
+                <div id="player">
+                  <div id="dialogoPato"></div>
+                  <div id="explosao"></div>
+                </div>
+
+                <div class="cell" id="cell-0">Start</div>
+                <div class="cell nocell"></div>
+                <div class="cell" id="cell-11">11</div>
+                <div class="cell quiz-cell" id="cell-12">Quiz!?</div>
+                <div class="cell" id="cell-13">13</div>
+                <div class="cell" id="cell-14"></div>
+                <div class="cell" id="cell-15">15</div>
+                <div class="cell quiz-cell" id="cell-16">Quiz!?</div>
+                <div class="cell" id="cell-17">17</div>
+                <div class="cell" id="cell-2">2</div>
+                <div class="cell nocell"></div>
+                <div class="cell" id="cell-10">10</div>
+                <div class="cell nocell"></div>
+                <div class="cell nocell"></div>
+                <div class="cell nocell"></div>
+                <div class="cell nocell"></div>
+                <div class="cell nocell"></div>
+                <div class="cell" id="cell-18">18</div>
+                <div class="cell quiz-cell" id="cell-3">Quiz!?</div>
+                <div class="cell nocell"></div>
+                <div class="cell quiz-cell" id="cell-9">Quiz!?</div>
+                <div class="cell nocell"></div>
+                <div class="cell" id="cell-23">23</div>
+                <div class="cell quiz-cell" id="cell-22">Quiz!?</div>
+                <div class="cell" id="cell-21">21</div>
+                <div class="cell" id="cell-20">20</div>
+                <div class="cell quiz-cell" id="cell-19">Quiz!?</div>
+                <div class="cell" id="cell-4">4</div>
+                <div class="cell nocell"></div>
+                <div class="cell" id="cell-8">8</div>
+                <div class="cell nocell"></div>
+                <div class="cell quiz-cell" id="cell-24">Quiz!?</div>
+                <div class="cell nocell"></div>
+                <div class="cell nocell"></div>
+                <div class="cell nocell"></div>
+                <div class="cell nocell"></div>
+                <div class="cell quiz-cell" id="cell-5">Quiz!?</div>
+                <div class="cell" id="cell-6">6</div>
+                <div class="cell" id="cell-7"></div>
+                <div class="cell nocell"></div>
+                <div class="cell" id="cell-25">25</div>
+                <div class="cell" id="cell-26">26</div>
+                <div class="cell quiz-cell" id="cell-27">Quiz!?</div>
+                <div class="cell" id="cell-28"></div>
+                <div class="cell" id="cell-29">End</div>
+              </div>
+              <button class="btnJogar" id="play" onclick="startGame()"><img class="dadoGif" src="./image/dado.gif" alt="dado"> Jogar o dado</button>
+              <button class="btnJogar" id="replay" onclick="reStartGame()">Jogar de novo</button>
+
+
+              <div class="question-container" id="questionContainer">
+                <button id="closeQuiz" onclick="closeQuiz()">X</button>
+                <p id="questionText"></p>
+                <form id="questionForm"></form>
+                <p id="feedback"></p>
+              </div>
+            </div>
+          </div>
+
+          <script src="js/scriptGamepatologic.js"></script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sec10">
+    <div class="paginacao-wrapper">
+      <div class="paginacao sec10" id="paginacao">
+        <div class="item">
+          <div class="textoEsq">
+            <h1>Nosso Projeto</h1>
+            <p class="textoLongo">
+              O projeto surgiu a partir da colaboração entre colegas que 
+              buscavam uma maneira mais leve e divertida de transmitir 
+              conhecimentos aos novos integrantes do laboratório de patologia 
+              de um grande hospital localizado na capital do Rio Grande do Sul. 
+              Este projeto visa ampliar o conhecimento sobre o funcionamento 
+              de laboratórios de anatomia patológica, fundamentais no diagnóstico 
+              e acompanhamento de doenças graves, como o câncer. 
+              A partir da perspectiva da histotecnologia, busca-se abordar os 
+              processos laboratoriais, substâncias químicas utilizadas, 
+              equipamentos, cuidados essenciais e os riscos biológicos envolvidos. 
+              O principal objetivo é despertar o interesse de alunos pela área da 
+              saúde, orientar profissionais quanto ao correto manejo de amostras 
+              e informar a população sobre a importância da patologia cirúrgica. 
+              Como produto educacional, será desenvolvida uma aplicação web 
+              gamificada, que apresentará de forma interativa e lúdica os 
+              conhecimentos sobre o laboratório de patologia.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="dots" data-dots-for="paginacao9"></div>
+    </div>
+  </section>
+
+  <section id="sec11">
+    <div class="paginacao-wrapper">
+      <div class="paginacao sec11" id="paginacao">
+        <div class="equipe">
+          <div class="membros">
+            <div class="membro">
+              <a href="mailto:augusto.lopez@ufcspa.edu.br">
+                <img src="./image/perfil/AugustoPerfil.jpg" alt="Perfil 1">
+                <h3>Augusto Lopez</h3>
+                <h4>Desenvolvedor WEB</h4>
+                <p>Aluno do Curso de Informática Biomédica UFCSPA</p>
+                <p>Técn. Análise e Desenvolvimento de Sistemas SENAIRS</p>
+                <p>Téc. Histotecnologia/Biotecnologia Senior GHC/UFRGS</p>
+              </a>
+            </div>
+            <div class="membro">
+              <a href="mailto:teste@exemplo.com">
+                <img src="./image/perfil/CristinaPerfil.png" alt="Perfil 2">
+                <h3>Cristina Brazeiro</h3>
+                <h4>Organizadora</h4>
+                <p>Aluna do Curso de Engenharia de Bioprocessos e Biotecnologia UERGS</p>
+                <p>Téc. Histotecnologia Senior GHC</p>
+              </a>
+            </div>
+            <div class="membro">
+              <a href="mailto:teste@exemplo.com">
+                <img src="./image/perfil/JaquelinePerfil.png" alt="Perfil 3">
+                <h3>Jaqueline Carletti</h3>
+                <h4>Revisora de Conteúdo Textual</h4>
+                <p>Biomedica IPA</p>
+                <p>Dra. Neurociências UFRGS</p>
+                <p>Téc. em Biotecnologia/Histopatologia jr. GHC/UFRGS</p>
+              </a>
+            </div>
+            <div class="membro">
+              <a href="mailto:teste@exemplo.com">
+                <img src="./image/perfil/AdrianaPerfil.jpg" alt="Perfil 4">
+                <h3>Adriana Leonel</h3>
+                <h4>Revisora de Designer</h4>
+                <p>Aluna do Curso de Propaganda e Marketing UFRGS</p>
+                <p>Téc. em Histopatologia GHC</p>
+              </a>
+            </div>
+            <div class="membro">
+              <a href="mailto:teste@exemplo.com">
+                <img src="./image/perfil/ChristianoPerfil.png" alt="Perfil 5">
+                <h3>CHRISTIANO TOMASSO SILVEIRA PONZONI </h3>
+                <h4>Revisor de Tópicos em Patologia</h4>
+                <p>Médico Patologista GHC</p>
+                <p>Outros</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dots" data-dots-for="paginacao10"></div>
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
+  <script src="js/scriptMapa.js"></script>
+  <script src="js/scriptGamepatologic.js"></script>
+</body>
+
+</html>

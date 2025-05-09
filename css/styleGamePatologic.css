@@ -1,0 +1,288 @@
+@font-face {
+  font-family: "Optima";
+  src: url("../fonts/optima_b.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Smooch+Sans:wght@100..900&family=Tektur:wght@400..900&display=swap");
+
+
+.gameContainer {
+  width: 100%;
+  padding-top: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  width: 70vw;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  -border: 3px solid rgb(41, 52, 201);
+}
+
+.tabuleiro {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  -border: 3px solid yellow;
+}
+
+#questionContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 13px;
+  display: none;
+  z-index: 10;
+  font-size: 1.2rem;
+  color: black;
+}
+
+#closeQuiz {
+  background: none;
+  color: rgb(3, 4, 63);
+  border: none;
+  margin-top: -10px;
+  padding: 5px;
+  cursor: pointer;
+  float: right;
+  font-weight: bold;
+}
+
+.cell {
+  width: 115px;
+  height: 70px;
+  border-radius: 9px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  position: relative;
+  font-family: "Oswald", Arial;
+  font-weight: 100;
+}
+
+.btnJogar {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 1.5%;
+  height: 70px;
+  border-radius: 9px;
+  border: 2px solid black;
+  background-color: #bfbfbf;
+  font-weight: bold;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -position: relative;
+}
+
+.btnJogar:hover {
+  background-color: #2c2932;
+  color: #ffd700;
+}
+
+#replay {
+  display: none;
+}
+
+.nocell {
+  background: none;
+  border: none;
+}
+
+.quiz-cell {
+  background-color: #ffd700 !important;
+}
+
+#cell-0 {
+  background-color: #bfbfbf;
+}
+
+#cell-1,
+#cell-2,
+#cell-3 {
+  background-color: #fff;
+}
+
+#cell-2,
+#cell-4 {
+  background-color: #a7b2f6;
+}
+
+#cell-6,
+#cell-8 {
+  background-color: #0f0f76bb;
+  color: #fff;
+}
+
+#cell-7,
+#cell-14,
+#cell-28 {
+  background-color: #a9b50c;
+  background-image: url("../image/perigo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 70%;
+}
+
+/* Animação de piscar */
+@keyframes piscar {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.piscando {
+  animation: piscar 1s infinite;
+}
+
+#cell-10,
+#cell-11 {
+  background-color: #ab6161;
+  color: #fff;
+}
+
+#cell-13,
+#cell-15 {
+  background-color: #e81919a9;
+  color: #fff;
+}
+
+#cell-17,
+#cell-18 {
+  background-color: #076c7b;
+  color: #fff;
+}
+
+#cell-20,
+#cell-21 {
+  background-color: #8a1f96;
+  color: #fff;
+}
+
+#cell-23,
+#cell-25 {
+  background-color: #7c7c03;
+  color: #fff;
+}
+
+#player {
+  width: 90px;
+  height: 78px;
+  top: 0;
+  left: 15px;
+  background-image: url("../image/patoPula.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  z-index: 9;
+}
+
+#dialogoPato {
+  position: absolute;
+  top: -50px;
+  left: 50px;
+  background: white;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  display: none;
+  color: black;
+  font-size: 1rem;
+}
+
+.info-panel {
+  width: 40%;
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 11px;
+  color: white;
+  -border: 1px solid white;
+}
+
+.dado {
+  width: 100px;
+  height: 100px;
+  -background-image: url("");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+  padding: 0 50px;
+}
+
+.dadoGif{
+  width: 80px;
+  height: 80px;
+}
+
+.casas,
+.tempo,
+.pontos,
+.atual {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 50px;
+}
+
+.question-box {
+  padding: 10px;
+  display: none;
+  text-align: center;
+}
+
+#questionText {
+  font-family: Verdana;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 412px) {
+  #player {
+    width: 70px;
+    height: 60px;
+    top: 0;
+    left: -17px;
+  }
+
+  .cell {
+    width: 35px;
+    height: 70px;
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 90vw;
+  }
+
+}

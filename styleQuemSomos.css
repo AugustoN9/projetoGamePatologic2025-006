@@ -1,0 +1,63 @@
+.equipe {
+    padding: 40px 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .membros {
+    padding-top: 8%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .membro {
+    padding: 20px;
+    width: 280px;
+    box-sizing: border-box;
+    transition: transform 0.2s;
+    font-family: Arial, Helvetica, sans-serif; 
+  }
+
+  .membro a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .membro:hover {
+    transform: translateY(-5px);
+  }
+
+  .membro img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .membro h3 {
+    margin: 0 0 .3rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  .membro h4 {
+    margin: 0 0 .3rem;
+    font-size: 1.1rem;
+    
+  }
+
+  .membro p {
+    margin: .6rem 0;
+    font-size: .8rem;
+    
+  }
+
+  .sec11{
+    background-color: darkslateblue;
+    -background-image: url("./image/fundolabpath.png");
+    -background-size: cover;
+    -background-repeat: no-repeat;
+  }
