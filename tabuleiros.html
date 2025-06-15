@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade 8x3</title>
+    <link rel="stylesheet" href="css/styleTabuleiro.css" />
+  </head>
+  <body>
+    <div class="info-panel">
+      <div class="dado" id="dado"></div>
+      <div class="casas" id="diceResult"></div>
+      <div class="pontos" id="pontuacao"><label>Pontos</label> <input type="number" value="100"></div>
+      <div class="atual" id="currentPositionDisplay"><label>Atual</label> <input type="number" value="0"></div>
+      <div class="tempo" id="timer"><label>Tempo seg</label> <input type="number" value="0"></div>
+    </div>
+    <div class="grade-container">
+      <!-- Total de 8x3 = 24 divs -->
+      <!-- Gerando com HTML -->
+
+      <div id="player">
+        <div id="dialogoPato"></div>
+        <div id="explosao"></div>
+      </div>
+
+      <div class="cell" id="cell-3">3</div>
+      <div class="cell quiz" id="cell-4">Quiz!?</div>
+      <div class="cell" id="cell-5">5</div>
+      <div class="cell" id="cell-2">2</div>
+      <div class="grade-item"></div>
+      <div class="cell" id="cell-6">6</div>
+      <div class="cell" id="cell-1">1</div>
+      <div class="grade-item"></div>
+      <div class="cell" id="cell-7">7</div>
+      <div class="grade-item"></div>
+      <div class="grade-item"></div>
+      <div class="cell quiz" id="cell-8">Quiz!?</div>
+      <div class="cell" id="cell-11">11</div>
+      <div class="cell" id="cell-10">10</div>
+      <div class="cell">9</div>
+      <div class="cell bomba" id="cell-12"></div>
+      <div class="grade-item"></div>
+      <div class="grade-item"></div>
+      <div class="cell quiz" id="cell-13">Quiz!?</div>
+      <div class="grade-item"></div>
+      <div class="grade-item"></div>
+      <div class="cell" id="cell-14">14</div>
+      <div class="cell" id="cell-15">15</div>
+      <div class="cell" id="cell-16">16</div>
+    </div>
+    <button class="btnJogar" id="play" onclick="startGame()"><img class="dadoGif" src="./image/dado.gif" alt="dado"> Jogar o dado</button>
+    <button class="btnJogar" id="replay" onclick="reStartGame()">Jogar de novo</button>
+
+    <script src="js/scriptGamepatologic16.js"></script>
+  </body>
+</html>

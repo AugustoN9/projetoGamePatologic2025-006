@@ -8,8 +8,9 @@
 
   html, body {
     height: 100%;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+    -scroll-behavior: smooth;
+    -overflow-x: hidden;
+    overflow: hidden;
     -scroll-padding-top: 80px; /* altura da navbar */
 }
 
@@ -71,7 +72,7 @@ scroll-padding-top: 80px; /* mesma altura da navbar */
     text-decoration: none;
     margin: 0 1rem;
     display: inline-block;
-   - transition: border-bottom 1s ease-in-out;
+   transition: border-bottom 1s ease-in-out;
   }
 
   .nav a:hover{
@@ -111,6 +112,7 @@ justify-content: flex-start;
 position: relative;
 }
 
+
   .paginacao {
     display: flex;
     height: 100%;
@@ -125,6 +127,40 @@ position: relative;
   .paginacao::-webkit-scrollbar {
     display: none;
   }
+
+
+.paginacao-wrapper {
+  position: relative; /* necessário para posicionar as setas */
+}
+
+.arrow-triangle {
+  position: absolute;
+  top: 96%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  font-size: 30px;
+  color: #333;
+  padding: 4px 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 9px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.2s;
+}
+
+.arrow-triangle:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.arrow-triangle.left {
+  left: 10px;
+}
+
+.arrow-triangle.right {
+  right: 10px;
+}
 
   .item {
 scroll-snap-align: start;
@@ -254,7 +290,7 @@ font-weight: 100;
 }
 
 .home2{
-    background-color: #FFF8F2;      
+    background-color: #f1d0b3;      
     display: flex;
     align-items: center;
     justify-content: center;
@@ -336,6 +372,25 @@ font-weight: 100;
     background-size: cover;  
 }
 
+.FundoArquivo {    
+    background-image: url("../image/arquivo.png");
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+
+.arquivo{
+    background-color: #ffffff;
+     color: #3c0a0a;
+}
+
+.tabela{
+  background-color: #007bff;
+}
+
+.tabela h1{
+  color: #3c0a0a;
+}
+
 .sec10{
     background-color: #EADDA9;
 }
@@ -381,6 +436,59 @@ font-weight: 100;
     font-size: 1rem;
     text-align: justify;
 }
+
+.textosTabela{
+  font-size: .9rem;
+}
+
+.tabela-estilizada {
+  width: 100%;
+  border-collapse: separate; /* necessário para aplicar border-radius */
+  border-spacing: 0; /* remove espaços entre células */
+  margin: 40px auto;
+  max-width: 900px;
+  overflow: hidden;
+  border-radius: 12px; /* bordas externas da tabela */
+}
+
+.tabela-estilizada thead th {
+  background-color: #000;
+  color: white;
+  padding: 12px 10px;
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Bordas arredondadas nos cantos superiores */
+.tabela-estilizada thead th:first-child {
+  border-top-left-radius: 12px;
+}
+.tabela-estilizada thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.tabela-estilizada tbody td {
+  padding: 12px 10px;
+  color: #000;
+}
+
+/* Bordas arredondadas nos cantos inferiores */
+.tabela-estilizada tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 12px;
+}
+.tabela-estilizada tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 12px;
+}
+
+/* Linhas alternadas */
+.tabela-estilizada tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.tabela-estilizada tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 
 .textos {
     display: flex;
@@ -452,10 +560,10 @@ z-index: 10;
 
 .map-container {
     position: relative;
-    width: 120%;
+    width: 30%;
   
     max-width: 1200px;
-    margin: 0;
+    margin-top: 55px;
 }
 
 .background-image {
@@ -530,9 +638,9 @@ z-index: 10;
   }
   
   .circle-link.clicked {
-    width: 10%;
+    width: 30%;
     background-color: #4caf50; /* Verde ou outra cor */
-    pointer-events: none;
+    -pointer-events: none;
     cursor: default;
   }
   
@@ -602,11 +710,18 @@ z-index: 10;
   .btnVoltar {
     height: 48px;
   }
+  .map-container {
+    width: 120%;
+  }
 }
 
 /* Para tablets (modo retrato e paisagem) */
 
 @media (max-width: 1024px) {
+
+  .map-container {
+    width: 100%;
+  }
 
 }
 
@@ -615,7 +730,7 @@ z-index: 10;
 @media (max-width: 768px) {
 
   .sec10 .textoEsq{
-    width: 80%;
+    width: 60%;
   }
 
   .sec10 .textoLongo{
@@ -645,6 +760,10 @@ z-index: 10;
 
   .nav.show {
     display: flex;
+  }
+
+  .map-container {
+    width: 100%;
   }
 
 }

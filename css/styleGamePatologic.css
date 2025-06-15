@@ -189,8 +189,8 @@
 #player {
   width: 90px;
   height: 78px;
-  top: 0;
-  left: 15px;
+  top: 50;
+  left: 1500px;
   background-image: url("../image/patoPula.gif");
   background-size: cover;
   background-repeat: no-repeat;
