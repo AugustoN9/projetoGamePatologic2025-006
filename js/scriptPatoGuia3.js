@@ -1,4 +1,3 @@
-// FALAS do Pato-Guia para cada item em cada paginacao
 const falasPatoPorPaginacao = {
   paginacao0: [
     "Olá, bem vindo. Sou o Pato Roberto. Quer saber como tudo começa no nosso laboratório de patologia? Então utilize a seta para continuar.",
@@ -51,7 +50,6 @@ const falasPatoPorPaginacao = {
   ]
 };
 
-// Frase alternativa para retorno à introdução
 const falaRetornoIntro = "Bem-vindo de volta! Pronto para continuar a jornada de conhecimento no nosso laboratório?";
 let patoIntroJaExibido = false;
 
@@ -61,15 +59,17 @@ function mostrarFalaPato(texto, forcar = false) {
 
   if (!fala || !avatar) return;
 
-  if (!forcar && texto === falasPatoPorPaginacao["paginacao0"]?.[0] && patoIntroJaExibido) {
-    fala.textContent = falaRetornoIntro;
-  } else {
-    fala.textContent = texto;
-    if (texto === falasPatoPorPaginacao["paginacao0"]?.[0]) {
+  const isIntro = texto === falasPatoPorPaginacao.paginacao0[0];
+
+  if (!forcar && isIntro) {
+    if (patoIntroJaExibido) {
+      texto = falaRetornoIntro;
+    } else {
       patoIntroJaExibido = true;
     }
   }
 
+  fala.textContent = texto;
   fala.style.opacity = 1;
   avatar.style.opacity = 1;
 
@@ -104,6 +104,12 @@ function updateArrowVisibility(wrapper) {
   rightBtn.style.display = atEnd ? 'none' : 'block';
 }
 
+function atualizarFalaDoPato(container) {
+  const index = detectarItemVisivel(container);
+  const fala = falasPatoPorPaginacao[container.id]?.[index];
+  if (fala) mostrarFalaPato(fala);
+}
+
 function setupNavegacaoComPatoGuia() {
   document.querySelectorAll('.paginacao-wrapper').forEach(wrapper => {
     const container = wrapper.querySelector('.paginacao');
@@ -115,31 +121,24 @@ function setupNavegacaoComPatoGuia() {
 
     const scrollAmount = items[0].offsetWidth;
 
-    function handleScroll(btn, direction) {
+    function handleScroll(direction) {
       container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
 
       setTimeout(() => {
         updateArrowVisibility(wrapper);
-        const index = detectarItemVisivel(container);
-        const fala = falasPatoPorPaginacao[container.id]?.[index];
-        if (fala) mostrarFalaPato(fala);
+        atualizarFalaDoPato(container);
       }, 400);
     }
 
-    leftBtn.addEventListener('click', () => handleScroll(leftBtn, -1));
-    rightBtn.addEventListener('click', () => handleScroll(rightBtn, 1));
+    leftBtn.addEventListener('click', () => handleScroll(-1));
+    rightBtn.addEventListener('click', () => handleScroll(1));
 
     container.addEventListener('scroll', () => {
       updateArrowVisibility(wrapper);
-      const index = detectarItemVisivel(container);
-      const fala = falasPatoPorPaginacao[container.id]?.[index];
-      if (fala) mostrarFalaPato(fala);
+      atualizarFalaDoPato(container);
     });
 
     updateArrowVisibility(wrapper);
-    const index = detectarItemVisivel(container);
-    const fala = falasPatoPorPaginacao[container.id]?.[index];
-    if (fala) mostrarFalaPato(fala);
   });
 }
 
@@ -168,4 +167,8 @@ function observarMudancaDeSecao() {
 window.addEventListener('DOMContentLoaded', () => {
   setupNavegacaoComPatoGuia();
   observarMudancaDeSecao();
+
+  // Mostra fala inicial explicitamente para garantir
+  const falaInicial = falasPatoPorPaginacao.paginacao0[0];
+  mostrarFalaPato(falaInicial, true);
 });
