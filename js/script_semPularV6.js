@@ -4,6 +4,7 @@ let timerInterval = null;
 let currentMapIndex = 0;
 let maxPosition = 10;
 let pontuacao = 0;
+let quizzesRespondidos = new Set();
 
 document.addEventListener("DOMContentLoaded", () => {
   const infoPanel = document.querySelector(".info-panel");
@@ -194,10 +195,14 @@ const mapas = [
           "Não será possível realizar o corte adequado e análise histológica.",
       },
       5: {
-        pergunta: "Qual é o símbolo de comentário em JavaScript?",
-        alternativas: ["<!-- -->", "//", "#"],
-        correta: 1,
-        explicacao: "O comentário de linha em JavaScript usa duas barras: //.",
+        pergunta: "A que temperatura a parafina deve estar para inclusão dos fragmentos?",
+        alternativas: [
+          "Aproximadamente 60°C.", 
+          "Menos de 20°C", 
+          "100°C, como água fervente."
+        ],
+        correta: 0,
+        explicacao: "Aproximadamente 60°C.",
       },
       11: {
         pergunta: "O uso da pinça no emblocamento é importante para:",
@@ -474,23 +479,48 @@ function movePlayer(steps) {
           exibirQuiz(currentPosition, mapaAtual.quiz[currentPosition]);
         }
 
-        if (currentPosition === maxPosition) {
-          clearInterval(timerInterval);
-          setTimeout(() => {
-            const continuar = Swal.fire({
-              title: "Você concluiu a fase! <br />Vamos para a próxima?",
-              icon: "success",
-              draggable: true,
-            });
+        
+if (currentPosition === maxPosition) {
+  clearInterval(timerInterval);
+  setTimeout(async () => {
+    if (quizzesRespondidos.size === 0) {
+      await Swal.fire({
+        icon: "info",
+        title: "Você chegou ao final!",
+        text: "Mas não respondeu nenhum quiz... vamos tentar novamente?",
+      });
+      carregarFaseAtual(); // reinicia fase
+      return;
+    }
 
-            if (continuar && currentMapIndex < mapas.length - 1) {
-              currentMapIndex++;
-              carregarFaseAtual();
-            } else {
-              finalizarJogo();
-            }
-          }, 300);
-        }
+  if (currentMapIndex === mapas.length - 1) {
+  await Swal.fire({
+    icon: "success",
+    title: "Parabéns! Você concluiu todas as fases do jogo!",
+    text: "Você concluiu todas as fases do jogo!",
+    confirmButtonText: "Finalizar"
+  });
+  finalizarJogo();
+} else {
+  const { isConfirmed } = await Swal.fire({
+    title: "Você concluiu a fase! <br />Vamos para a próxima?",
+    icon: "success",
+    showCancelButton: true,
+    confirmButtonText: "Sim!",
+    cancelButtonText: "Não",
+  });
+
+  if (isConfirmed) {
+    currentMapIndex++;
+    carregarFaseAtual();
+  } else {
+    finalizarJogo();
+  }
+}
+
+  }, 300);
+}
+
 
         isMoving = false;
       }, 500);
@@ -524,6 +554,7 @@ function posicionarNaCasa(pos) {
 }
 
 function exibirQuiz(posicao, quiz) {
+  quizzesRespondidos.add(posicao);
   const modal = document.createElement("div");
   modal.id = "quiz-modal";
   modal.innerHTML = `
@@ -604,6 +635,7 @@ function updateTimer() {
 }
 
 function carregarFaseAtual() {
+  quizzesRespondidos.clear();
   startTime = null;
   clearInterval(timerInterval);
   timerInterval = null;
