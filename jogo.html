@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jogo Educacional por Fases</title>
+  <link rel="stylesheet" href="css/styleV6.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    
+  <div class="game-container">
+    <h2 id="faseAtual">Fase 1 - Mapa 01</h2>
+
+    <div class="info-panel">
+      <p id="timer">Tempo: 0s</p>
+      <p id="diceResult">Dado: ?</p>
+      <p id="currentPositionDisplay" class="desativo"></p>
+    </div>
+
+    <div id="game-area">
+      <div class="container"></div>
+      <div id="player"></div>
+    </div>
+
+    <button onclick="startGame()"  id="actionButton">Jogar dado</button>
+  </div>
+  <script src="js/script_semPularV6.js"></script>
+</body>
+</html>
+

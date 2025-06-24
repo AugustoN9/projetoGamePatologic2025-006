@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Oswald", Arial, sans-serif;
+  background: #ddd;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #b5760f;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  padding: 10px;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-panel {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+#game-area {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc; /* cor de fallback */
+  background-repeat: no-repeat;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 100%;
+  height: 100%;
+  -background-color: #9c8108;
+  gap: 2px;
+  position: relative;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(239, 235, 232, 0.603);
+  border: 3px solid #333;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 9px;
+}
+
+.nocell {
+  background: none;
+  border: none;
+}
+
+.casa-quiz, .casa-bomba {
+  width: 40px;
+  height: 40px;
+}
+
+.desativo{
+    display: none;
+}
+
+#player {
+  position: absolute;
+  width: calc(100% / 3);
+  height: calc(100% / 8);
+  background-image: url("../image/patoPulaV6.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+  transition: 0.4s ease-in-out;
+  pointer-events: none;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background-color: #052761;
+  color: white;
+  cursor: pointer;
+  width: 90%;
+  max-width: 300px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #1a54c4;
+}
+
+/* Estilo geral do quiz modal */
+#quiz-modal .quiz-box {
+  background-color: white;
+  border-radius: 20px;
+  border: 5px solid #6d3fd1;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* Cabeçalho do quiz */
+#quiz-modal .quiz-box h3 {
+  background-color: #6d3fd1;
+  color: white;
+  padding: 12px;
+  border-radius: 15px 15px 0 0;
+  margin: -20px -20px 20px -20px;
+  font-size: 18px;
+}
+
+/* Pergunta */
+#quiz-modal .quiz-box p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Alternativas */
+#quiz-modal .quiz-box label {
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 16px;
+}
+
+#quiz-modal .quiz-box label:hover {
+  background-color: #e5e5e5;
+}
+
+#quiz-modal .quiz-box input[type="radio"] {
+  margin-right: 10px;
+  transform: scale(1.3);
+}
+
+/* Botão de responder */
+#quiz-modal .quiz-box button {
+  background-color: #03b36f;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: 2px solid #028957;
+  border-radius: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#quiz-modal .quiz-box button:hover {
+  background-color: #028957;
+}
+
+/* Feedback após resposta */
+#quiz-modal #feedback {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.explicacao-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 4px solid #6d3fd1;
+  border-radius: 20px;
+  padding: 25px 30px 30px 30px;
+  width: 80%;
+  max-width: 450px;
+  z-index: 1001;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+.explicacao-conteudo {
+  font-size: 18px;
+  color: #004466;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Botão FECHAR */
+.botao-fechar-explicacao {
+  margin-top: 20px;
+  background-color: #6d3fd1;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botao-fechar-explicacao:hover {
+  background-color: #522bbd;
+}

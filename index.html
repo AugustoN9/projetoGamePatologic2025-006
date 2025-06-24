@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projeto PatoLogic</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/styleGamePatologic.css">
@@ -43,9 +43,26 @@
   <section id="sec1">
     <div class="paginacao-wrapper">
       <div class="paginacao" id="paginacao0">
-        <div class="item home">
+        <div class="item homeFundo">
           <div class="textoEsq">
             <h1>Introdução</h1>
+            <p>
+              Olá! Seja bem-vindo ao ambiente virtual Patologic.
+              Você está prestes a aprender como funciona um laboratório de patologia, 
+              entendendo as diversas fases que o compreendem. 
+              São elas: a pré-analítica, analítica e pós-analítica. </br>
+              Ao final do aprendizado, você será convidado a participar de um jogo para testar o seu conhecimento 	&#128556; </br>
+              Tenha um ótimo aprendizado &#128521;! </br>
+              Um abraço da comissão organizadora! 
+
+            </p>
+          </div>
+          <div class="figSec FundoHome4"></div>
+        </div>
+        <div class="item home">
+          <div class="figSec FundoHome"></div>
+          <div class="textoDir">
+            <h1>Já imaginaram</h1>
             <p>
               Imagine uma mulher indo ao ginecologista para um exame de rotina,
               um paciente com queixas de dor abdominal descobrindo uma gastrite,
@@ -58,7 +75,7 @@
               por dentro deste laboratório e conhecer seus processos.
             </p>
           </div>
-          <div class="figSec FundoHome"></div>
+          
         </div>
         <div class="item home3">
           <div class="textoEsq">
@@ -81,6 +98,7 @@
           <div class="figSec FundoHome3"></div>
         </div>
         <div class="item home2" id="mapa">
+          <h1 class="tituloMapa">Mapa do Laboratório de Patologia</h1>
           <div class="map-container">
             <img src="./image/MapaLabVertical.png" alt="Mapa Laboratório" class="background-image">        
 
@@ -340,6 +358,9 @@
                 consistência e presença de lesões visíveis.
                 Essa etapa é fundamental para orientar o processamento e a amostragem correta do material,
                 auxiliando o patologista na formulação do diagnóstico.
+                Após a fixação, é realizada uma amostragem das peças, ou seja, uma seleção de fragmentos 
+                representativos do tecido a ser aplicado. Para cada peça anatômica ou biópsia, diferentes 
+                protocolos são aplicados. 
               </p>
             </div>
           </div>
@@ -695,85 +716,10 @@
   <section id="sec10">
     <div class="paginacao-wrapper">
       <div class="paginacao" id="paginacao9">
-        <div class="item Jogo">
-          <div class="gameContainer">
-            <div class="info-panel">
-              <div class="dado" id="dado"></div>
-              <div class="casas" id="diceResult"></div>
-              <div class="pontos" id="pontuacao">PONTOS: 100</div>
-              <div class="atual" id="currentPositionDisplay">ATUAL: 0</div>
-              <div class="tempo" id="timer">TEMPO: 0s</div>
-            </div>
-            <div class="container">
+        <div class="item FundoLaboratory">
+            <label>Vamos Jogar!!! Clique em mim!</label>
+            <a href="jogo.html"><img src="./image/logoPato.png" width="240px"/></a>
 
-              <!-- Tabuleiro  -->
-              <div class="tabuleiro">
-                <!-- Div onde a patinho começa -->
-                <div id="player">
-                  <div id="dialogoPato"></div>
-                  <div id="explosao"></div>
-                </div>
-
-                <div class="cell" id="cell-0">Start</div>
-                <div class="cell nocell"></div>
-                <div class="cell" id="cell-11">11</div>
-                <div class="cell quiz-cell" id="cell-12">Quiz!?</div>
-                <div class="cell" id="cell-13">13</div>
-                <div class="cell" id="cell-14"></div>
-                <div class="cell" id="cell-15">15</div>
-                <div class="cell quiz-cell" id="cell-16">Quiz!?</div>
-                <div class="cell" id="cell-17">17</div>
-                <div class="cell" id="cell-2">2</div>
-                <div class="cell nocell"></div>
-                <div class="cell" id="cell-10">10</div>
-                <div class="cell nocell"></div>
-                <div class="cell nocell"></div>
-                <div class="cell nocell"></div>
-                <div class="cell nocell"></div>
-                <div class="cell nocell"></div>
-                <div class="cell" id="cell-18">18</div>
-                <div class="cell quiz-cell" id="cell-3">Quiz!?</div>
-                <div class="cell nocell"></div>
-                <div class="cell quiz-cell" id="cell-9">Quiz!?</div>
-                <div class="cell nocell"></div>
-                <div class="cell" id="cell-23">23</div>
-                <div class="cell quiz-cell" id="cell-22">Quiz!?</div>
-                <div class="cell" id="cell-21">21</div>
-                <div class="cell" id="cell-20">20</div>
-                <div class="cell quiz-cell" id="cell-19">Quiz!?</div>
-                <div class="cell" id="cell-4">4</div>
-                <div class="cell nocell"></div>
-                <div class="cell" id="cell-8">8</div>
-                <div class="cell nocell"></div>
-                <div class="cell quiz-cell" id="cell-24">Quiz!?</div>
-                <div class="cell nocell"></div>
-                <div class="cell nocell"></div>
-                <div class="cell nocell"></div>
-                <div class="cell nocell"></div>
-                <div class="cell quiz-cell" id="cell-5">Quiz!?</div>
-                <div class="cell" id="cell-6">6</div>
-                <div class="cell" id="cell-7"></div>
-                <div class="cell nocell"></div>
-                <div class="cell" id="cell-25">25</div>
-                <div class="cell" id="cell-26">26</div>
-                <div class="cell quiz-cell" id="cell-27">Quiz!?</div>
-                <div class="cell" id="cell-28"></div>
-                <div class="cell" id="cell-29">End</div>
-              </div>
-              <button class="btnJogar" id="play" onclick="startGame()"><img class="dadoGif" src="./image/dado.gif" alt="dado"> Jogar o dado</button>
-              <button class="btnJogar" id="replay" onclick="reStartGame()">Jogar de novo</button>
-
-
-              <div class="question-container" id="questionContainer">
-                <button id="closeQuiz" onclick="closeQuiz()">X</button>
-                <p id="questionText"></p>
-                <form id="questionForm"></form>
-                <p id="feedback"></p>
-              </div>
-            </div>
-          </div>
-
-          <script src="js/scriptGamepatologic.js"></script>
         </div>
       </div>
     </div>

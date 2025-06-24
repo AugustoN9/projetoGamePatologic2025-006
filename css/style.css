@@ -120,8 +120,8 @@ position: relative;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    background-color: #222;
-   
+    -background-color: #222;
+    background-color: #601EF9;
   }
 
   .paginacao::-webkit-scrollbar {
@@ -229,6 +229,14 @@ font-weight: 100;
     padding-left: 2rem;
 }
 
+.tituloMapa{
+  margin: 5% 0 0 0 ;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 10% 5px 0 5px;
+  color: #222;
+}
+
 .subtitulo{
     padding: 2rem 0;
 }
@@ -298,9 +306,14 @@ font-weight: 100;
 }
 
 
-.FundoHome{
-    
-    background-image: url("../image/pele.png");
+.FundoHome{    
+    background-image: url("../image/Cytology.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+
+.FundoHome4{    
+    background-image: url("../image/histologyEpitelio.png");
     background-repeat: no-repeat;
     background-size: cover;  
 }
@@ -392,7 +405,18 @@ font-weight: 100;
 }
 
 .sec10{
-    background-color: #EADDA9;
+  background-color: #EADDA9;
+}
+
+.FundoLaboratory{    
+    background-image: url("../image/laboratory.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.FundoLaboratory label{
+  color: #000;
+  font-weight: bold;
 }
 
 .sec10 h1, .textoLongo{
