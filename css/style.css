@@ -135,7 +135,7 @@ position: relative;
 
 .arrow-triangle {
   position: absolute;
-  top: 96%;
+  top: 90%;
   transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.9);
   border: none;
@@ -547,8 +547,8 @@ font-weight: 100;
   font-size: 1.2rem;
 }
 
-h1, h2 {
-    padding: 2rem 0;
+.textoEsq h1, h2 {
+    padding: .4rem 0;
 }
 
 h3 {
@@ -730,12 +730,24 @@ z-index: 10;
   box-shadow: rgba(0, 0, 0, .5) 0 0 0 3px;
 }
 
+.mp4 {
+  height: 75vh;
+  margin-top: 7%;
+  border-radius: 9px;
+}
+
 @media (max-width: 420px) {
   .btnVoltar {
     height: 48px;
   }
   .map-container {
     width: 120%;
+  }
+
+  .mp4 {
+    width: 85vw;
+    margin-top: 80px;
+    border-radius: 9px;
   }
 }
 
@@ -850,7 +862,7 @@ z-index: 10;
     }
 
     .macro1 .textoEsq{
-      padding-top: 8rem;
+      padding-top: 6rem;
     }
 
     .sec10 .textoEsq{
@@ -866,3 +878,4 @@ z-index: 10;
     }
 
   }
+
