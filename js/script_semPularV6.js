@@ -62,7 +62,7 @@ const mapas = [
           " Deve ser recusada ou corrigida antes de ser registrada.",
           " Pode ser registrada normalmente.",
         ],
-        correta: 2,
+        correta: 1,
         explicacao: " Deve ser recusada ou corrigida antes de ser registrada.",
       },
     },
@@ -497,9 +497,15 @@ if (currentPosition === maxPosition) {
   await Swal.fire({
     icon: "success",
     title: "Parabéns! Você concluiu todas as fases do jogo!",
-    text: "Você concluiu todas as fases do jogo!",
-    confirmButtonText: "Finalizar"
+    text: "Obrigado por jogar! Agora você será direcionado para uma rápida avaliação.",
+  html: `
+    <p><a href="formulario.html" class="swal2-confirm-link">Clique aqui para avaliar o app</a></p>
+  `,
+  showConfirmButton: false,
+  allowOutsideClick: false
   });
+  
+
   finalizarJogo();
 } else {
   const { isConfirmed } = await Swal.fire({
@@ -645,6 +651,7 @@ function carregarFaseAtual() {
 }
 
 function finalizarJogo() {
+
   const botao = document.getElementById("actionButton");
   botao.innerText = "Reiniciar Jogo";
   botao.onclick = reiniciarJogo;

@@ -1,11 +1,11 @@
 #pato-guia {
   position: fixed;
-  bottom: 60px;
+  bottom: 40px;
   right: 30px;
   display: flex;
   align-items: flex-end;
   gap: 12px;
-  z-index: 9999;
+  z-index: 998;
 }
 
 #pato-img {
