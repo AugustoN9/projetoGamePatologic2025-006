@@ -1,8 +1,10 @@
 const falasPatoPorPaginacao = {
   paginacao0: [
     "Olá! Seja muito bem-vindo, eu sou o Ducktor, seu guia nesta jornada de descobertas. Vamos explorar juntos e entender como tudo funciona por aqui. Está pronto para começar? Então clique na seta e venha comigo!",
+    "O laboratório possui subdivisões, cada uma com uma responsabilidade. Não deixe de ver as fases do processo diagnóstico.",
     "Já imaginaram o que acontece com aquele exame que seu médico pedi, aquela biopsia, aquela coleta do preventivo ginecológico?",
     "Aqui aprendemos sobre a história da patologia.",
+    "Se não se importa vou chamar você de Patolovers, leia esta informação é muito explicativa, quack! ",
     "Vamos explorar o mapa do laboratório! Cada etapa é importante vamos entender como tudo funciona. Clique o circulo disponível azul."
   ],
   paginacao1: [
