@@ -140,7 +140,6 @@
 }
 
 /* Animação de piscar */
-@keyframes piscar {
   0% {
     opacity: 1;
   }

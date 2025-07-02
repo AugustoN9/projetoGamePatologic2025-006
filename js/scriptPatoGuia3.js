@@ -38,7 +38,7 @@ const falasPatoPorPaginacao = {
   ],
   paginacao6: [
     "Vamos colorir! Chegamos na Coloração.",
-    "Veja outras técnicas além do HE.",
+    "Observe o esquema que ilustra o protocolo de coloração do HE.",
     "Você sabia? Hematoxilina cora o núcleo!"
   ],
   paginacao7: [

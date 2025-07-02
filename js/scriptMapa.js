@@ -18,13 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Restaurar progresso salvo
   for (let i = 1; i <= 9; i++) {
-    mapas.forEach(mapa => {
+    mapas.forEach((mapa) => {
       const circle = document.getElementById(`circle${i}-${mapa}`);
       if (!circle) return;
 
       if (localStorage.getItem(`circle-${i}-visited`) === "true") {
-        circle.classList.add("visited", "clicked");
-        circle.textContent = circle.getAttribute("data-step"); // ← aqui garante o nome ao retornar
+        circle.classList.add("visited");
+      }
+      if (localStorage.getItem(`circle-${i}-enabled`) === "true") {
+        circle.classList.remove("disabled");
       }
 
       if (localStorage.getItem(`circle-${i}-enabled`) === "true") {
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Ativar clique e salvar progresso
   for (let i = 1; i <= 8; i++) {
-    mapas.forEach(mapa => {
+    mapas.forEach((mapa) => {
       const currentCircle = document.getElementById(`circle${i}-${mapa}`);
       const nextCircle = document.getElementById(`circle${i + 1}-${mapa}`);
       if (!currentCircle) return;
@@ -53,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Mostrar texto do data-step ao clicar
-  mapas.forEach(mapa => {
+  mapas.forEach((mapa) => {
     for (let i = 1; i <= 9; i++) {
       const link = document.getElementById(`circle${i}-${mapa}`);
       if (!link) continue;
