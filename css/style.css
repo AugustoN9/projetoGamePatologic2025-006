@@ -300,11 +300,15 @@ section {
   color: #4c15e4e4;
 }
 
-.esquemaHistotecnico , .esquemaHE , .figados {
+.esquemaHistotecnico , .esquemaHE  {
   margin-top: 12%;
   width: 70%;
 }
 
+.figados {
+  margin-top: 10%;
+  height: 80%;
+}
 
 .mapaMenu {
   background-color: #f1d0b3;
@@ -446,6 +450,11 @@ section {
 .sec10 h1,
 .textoLongo {
   color: #3c0a0a;
+}
+
+
+.textoLongoMicro p{
+  font-size: 1.2rem;
 }
 
 .sec10 .textoEsq {
@@ -935,8 +944,12 @@ h3 {
     padding-top: 6rem;
   }
 
-  .esquemaHistotecnico, .esquemaHE, .figados{ 
+  .esquemaHistotecnico, .esquemaHE{ 
   width: 98%;
+}
+
+figados{
+  width: 50%;
 }
 
   .textoPagToda {
