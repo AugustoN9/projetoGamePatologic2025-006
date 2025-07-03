@@ -300,8 +300,9 @@ section {
   color: #4c15e4e4;
 }
 
-.esquemaHistotecnico, .esquemaHE, .figados {
-  width: 78%;
+.esquemaHistotecnico , .esquemaHE , .figados {
+  margin-top: 12%;
+  width: 70%;
 }
 
 
